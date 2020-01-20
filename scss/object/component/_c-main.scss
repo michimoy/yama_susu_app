@@ -1,0 +1,273 @@
+//ヒーローバナー
+.c-hero{
+  background-image: url('../images/hero_mountain.jpg');
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  height:700px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  &__title{
+    text-align: center;
+    font-size: 45px;
+    font-family: "ヒラギノ角ゴシック Pro", cursive;
+    color: #CCFFFF;
+    text-shadow: 0 0 20px rgba(227, 123, 137, 0.4), 0 0 50px rgba(0, 0, 0, 0.8);
+  }
+  br {
+    @include mq() {
+      display: none;
+    }
+  }
+}
+
+//山紹介
+.c-introduction{
+  width:100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  box-sizing: border-box;
+  &__title{
+    width:70%;
+    margin: 0 auto;
+    padding-bottom:40px;
+    &__text{
+      display: inline-block;
+      background-color:white;
+      padding: 0 10px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+//注意事項
+.c-notes{
+  width:100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  & p{
+    line-height:40px;
+    & br{
+      @include mq(){
+        display: none;
+      };
+    }
+  }
+}
+
+//ギア紹介
+.c-gear{
+  width:100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  &__photo{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__item{
+      width:50%;
+      @include mq(){
+        width:25%;
+      }
+      margin: 0 auto;
+      & h3{
+        font-size: 20px;
+      }
+      & img{
+        width:50%;
+        @include mq(){
+          width:100%;
+        }
+      }
+    }
+  }
+  &__detail{
+    font-size: 15px;
+    line-height: 30px;
+    @include mq(){
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+}
+
+//お問い合わせ
+.c-contact{
+  width:100%;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 120px;
+  &__form{
+    display: flex;
+    flex-direction: column;
+    &__input{
+      width:80%;
+      @include mq(){
+        width:50%;
+      }
+      margin:0 auto;
+      display: block;
+      margin-bottom: $space_m;
+      border: 3px solid #f6f5f4;
+      border-radius: 4px;
+      outline: none;
+      height: 60px;
+      font-size: $font-size_l;
+      color: $font-color_default;
+      box-sizing: border-box;
+      &:focus{
+        border: 3px solid $color_corp;
+      }
+    }
+    &__textarea{
+      height:200px;
+    }
+    ::placeholder {
+      color: #ccc;
+    }
+  }
+}
+
+//画像スライダー
+.c-slider{
+  width:100%;
+  overflow: hidden;
+  position:relative;
+  .slider-nav{
+    border-radius: 10px;
+    background-color:#EEEEEE;
+    color:#000055;
+    opacity: 50%;
+    position:absolute;
+    top:150px;
+    @include mq(){
+      top:300px;
+    }
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .slider-prev{
+    left: 20px;
+    z-index: 1;
+  }
+  .slider-next{
+    right: 20px;
+    z-index: 1;
+  }
+  &__container{
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    &__item{
+      width: 100vw;
+      float: left;
+      & img{
+        width:100%;
+        height:300px;
+        @include mq(){
+          height:600px;
+        }
+      }
+      &--detail{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        height:200px;
+        background-color: #E6FFE9;
+        & p{
+          height:50px;
+          @include mq(){
+            height:100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//ボタン管理
+.c-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: .3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: "Amatic SC", cursive;
+  color:#FFFFFF;
+  background:linear-gradient(to right, #ffdde1, #ee9ca7);
+  &:hover{
+    transition: translateY(-3px);
+    transition: .3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  &__gear{
+    width:30%;
+    margin:0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include mq(){
+      width:10%;
+      padding: 30px;
+    }
+  }
+  &__contact{
+    width:80%;
+
+    @include mq(){
+      width:50%;
+    }
+    margin:0 auto;
+  }
+  &__m{
+    padding: $space_m $space_m;
+    font-size: $font-size_m;
+  }
+  &__l{
+    padding: $space_l $space_l;
+    font-size: $font-size_l;
+  }
+}
+
+//大見出し二重線
+.c-container-title{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom:50px;
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  &__text{
+    background: #fff;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+  }
+  &:before, &:after {
+    border-top: 1px solid #2e1f1a;
+    height:20px;
+    content: "";
+    display: block;
+    position: relative;
+    z-index: 0;
+  }
+  &:before{
+    top:30px;
+  }
+  &:after{
+    bottom:10px;
+  }
+}
