@@ -31,5 +31,8 @@
     "nodemon": "^1.18.4",
     "gulp-sass": "^4.0.2",
     "install": "^0.13.0"
+  },
+  "engines": {
+    "node": "v4.7.0"
   }
 }
